@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Slack - Lillian - Favela Brass</title>
+    <style>
+        :root {
+            --fb-purple: #5A0E7A;
+            --fb-dark-purple: #3E0B59;
+            --fb-yellow: #FEF100;
+            --fb-green: #62CC3C;
+            --fb-white: #FFFFFF;
+            --fb-muted: rgba(255,255,255,0.6);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--fb-dark-purple) 0%, var(--fb-purple) 100%);
+            color: var(--fb-white);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .header img { max-width: 120px; margin-bottom: 15px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--fb-muted);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-link:hover { color: var(--fb-yellow); }
+
+        h1 {
+            background: linear-gradient(90deg, var(--fb-yellow), var(--fb-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .subtitle { color: var(--fb-muted); margin-top: 5px; }
+
+        h2 {
+            color: var(--fb-yellow);
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h3 { color: var(--fb-green); margin-top: 25px; }
+
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--fb-purple);
+            color: var(--fb-yellow);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: var(--fb-yellow);
+        }
+
+        pre {
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            border-left: 4px solid var(--fb-yellow);
+        }
+
+        pre code { background: none; padding: 0; color: var(--fb-white); }
+
+        .important {
+            background: rgba(254, 241, 0, 0.15);
+            border-left: 4px solid var(--fb-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important strong { color: var(--fb-yellow); }
+
+        a { color: var(--fb-yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .channel-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            color: var(--fb-green);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 40px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--fb-muted);
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body { background: white; color: #333; padding: 20px; }
+            h1 { -webkit-text-fill-color: var(--fb-purple); }
+            h2 { color: var(--fb-purple); }
+            h3 { color: var(--fb-dark-purple); }
+            .section { background: #f9f9f9; border-color: #ddd; }
+            code { background: #f0f0f0; color: var(--fb-purple); }
+            pre { background: #f5f5f5; }
+            pre code { color: #333; }
+            .channel-tag { background: #e8f5e9; color: #2e7d32; }
+            .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Voltar</a>
+
+    <div class="header">
+        <img src="Logo FB White.png" alt="Favela Brass" onerror="this.style.display='none'">
+        <h1>Guia do Slack</h1>
+        <p class="subtitle">Lillian - Relação com Pais</p>
+    </div>
+
+    <div class="section">
+        <h2>Seus Canais</h2>
+        <table>
+            <tr><th>Canal</th><th>Para quê</th></tr>
+            <tr><td><code>#geral</code></td><td>Comunicados para toda equipe</td></tr>
+            <tr><td><code>#pedagogico</code></td><td>Questões de alunos, frequência, disciplina</td></tr>
+            <tr><td><code>#registro-de-pais</code></td><td>Registrar interações importantes com pais</td></tr>
+            <tr><td><code>#midias</code></td><td>Vídeos/fotos para redes sociais</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Registro de Pais</h2>
+        <p>O canal <span class="channel-tag">#registro-de-pais</span> é o mais importante para você. Sempre que tiver uma interação significativa com pais/responsáveis, registre aqui:</p>
+
+        <h3>Reclamações</h3>
+        <pre><code>Mãe do João (139) reclamou que ele não está progredindo. Quer trocar de professor.</code></pre>
+
+        <h3>Pedidos</h3>
+        <pre><code>Pai da Maria (245) pediu atestado de matrícula para escola.</code></pre>
+
+        <h3>Avisos de ausência</h3>
+        <pre><code>Responsável do Pedro (312) avisou que vai viajar, faltas de 10-24 fev.</code></pre>
+
+        <h3>Problemas em casa</h3>
+        <pre><code>Avó da Ana (187) comentou que pais estão se separando, aluna pode ficar abalada.</code></pre>
+
+        <h3>Elogios</h3>
+        <pre><code>Mãe do Lucas (203) agradeceu pelo progresso do filho, muito feliz com as aulas.</code></pre>
+
+        <div class="important">
+            <strong>Por que registrar?</strong>
+            <ul style="margin-bottom: 0;">
+                <li>Cria histórico para quando precisar lembrar o que foi conversado</li>
+                <li>Permite que Wesley e Iris saibam de situações importantes</li>
+                <li>Protege a organização em caso de conflitos</li>
+                <li>Ajuda a identificar padrões (famílias com problemas recorrentes)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Questões Pedagógicas</h2>
+        <p>No canal <span class="channel-tag">#pedagogico</span>, discuta com Wesley e Iris:</p>
+        <ul>
+            <li>Alunos com problemas de comportamento</li>
+            <li>Casos de frequência baixa</li>
+            <li>Situações que precisam de decisão (suspensão, conversa com pais)</li>
+            <li>Acompanhamento de casos em andamento</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Comandos do Bot</h2>
+        <p>Você pode usar alguns comandos para consultar informações:</p>
+
+        <table>
+            <tr><td><code>/aluno 139</code></td><td>Buscar dados de um aluno</td></tr>
+            <tr><td><code>/aluno pedro silva</code></td><td>Buscar aluno pelo nome</td></tr>
+            <tr><td><code>/banda verde</code></td><td>Ver alunos de uma banda</td></tr>
+            <tr><td><code>/pergunta quem é responsável do aluno 139?</code></td><td>Pergunta em linguagem natural</td></tr>
+        </table>
+
+        <div class="important">
+            <strong>Encontrar o ID do aluno:</strong> O número entre parênteses (ex: 139) é o ID. Você pode encontrar em <a href="https://roteiro.favelabrass.org">roteiro.favelabrass.org</a> ou usando <code>/aluno nome</code>.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Mídias</h2>
+        <p>No canal <span class="channel-tag">#midias</span>, você pode compartilhar fotos e vídeos de atividades que podem ser usados para redes sociais. Não precisa ser organizado - é um acervo geral de conteúdo.</p>
+    </div>
+
+    <hr>
+
+    <p class="footer">
+        <a href="index.html">← Voltar ao índice</a><br><br>
+        Dúvidas sobre o sistema? Fale com Tom ou Iris.<br>
+        <a href="https://roteiro.favelabrass.org">roteiro.favelabrass.org</a>
+    </p>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Slack - Raíssa - Favela Brass</title>
+    <style>
+        :root {
+            --fb-purple: #5A0E7A;
+            --fb-dark-purple: #3E0B59;
+            --fb-yellow: #FEF100;
+            --fb-green: #62CC3C;
+            --fb-white: #FFFFFF;
+            --fb-muted: rgba(255,255,255,0.6);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--fb-dark-purple) 0%, var(--fb-purple) 100%);
+            color: var(--fb-white);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .header img { max-width: 120px; margin-bottom: 15px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--fb-muted);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-link:hover { color: var(--fb-yellow); }
+
+        h1 {
+            background: linear-gradient(90deg, var(--fb-yellow), var(--fb-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .subtitle { color: var(--fb-muted); margin-top: 5px; }
+
+        h2 {
+            color: var(--fb-yellow);
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h3 { color: var(--fb-green); margin-top: 25px; }
+
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--fb-purple);
+            color: var(--fb-yellow);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: var(--fb-yellow);
+        }
+
+        pre {
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            border-left: 4px solid var(--fb-yellow);
+        }
+
+        pre code { background: none; padding: 0; color: var(--fb-white); }
+
+        .important {
+            background: rgba(254, 241, 0, 0.15);
+            border-left: 4px solid var(--fb-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important strong { color: var(--fb-yellow); }
+
+        a { color: var(--fb-yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .channel-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            color: var(--fb-green);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 40px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--fb-muted);
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body { background: white; color: #333; padding: 20px; }
+            h1 { -webkit-text-fill-color: var(--fb-purple); }
+            h2 { color: var(--fb-purple); }
+            h3 { color: var(--fb-dark-purple); }
+            .section { background: #f9f9f9; border-color: #ddd; }
+            code { background: #f0f0f0; color: var(--fb-purple); }
+            pre { background: #f5f5f5; }
+            pre code { color: #333; }
+            .channel-tag { background: #e8f5e9; color: #2e7d32; }
+            .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Voltar</a>
+
+    <div class="header">
+        <img src="Logo FB White.png" alt="Favela Brass" onerror="this.style.display='none'">
+        <h1>Guia do Slack</h1>
+        <p class="subtitle">Raíssa - Financeiro</p>
+    </div>
+
+    <div class="section">
+        <h2>Seus Canais</h2>
+        <table>
+            <tr><th>Canal</th><th>Para quê</th></tr>
+            <tr><td><code>#geral</code></td><td>Comunicados para toda equipe</td></tr>
+            <tr><td><code>#lideranca</code></td><td>Decisões estratégicas (com Tom e Wesley)</td></tr>
+            <tr><td><code>#conselho</code></td><td>Burocracia do conselho, AGM</td></tr>
+            <tr><td><code>#compras</code></td><td>Pedidos de compra, recibos, doações</td></tr>
+            <tr><td><code>#fotos-rouanet</code></td><td>Fotos comprobatórias para prestação de contas</td></tr>
+            <tr><td><code>#eventos</code></td><td>Coordenação geral de eventos</td></tr>
+            <tr><td><code>#evento-xxx</code></td><td>Canais de eventos específicos (orçamentos)</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Compras e Recibos</h2>
+        <p>O canal <span class="channel-tag">#compras</span> é onde a equipe envia:</p>
+
+        <h3>Pedidos de compra</h3>
+        <pre><code>Preciso de 10 palhetas Rico 2.5 para sax alto</code></pre>
+        <p>Você avalia e aprova/rejeita.</p>
+
+        <h3>Recibos</h3>
+        <p>A equipe posta fotos de recibos após compras. O bot salva automaticamente em <code>HQ/favelabrass/receipts/</code> organizado por mês.</p>
+
+        <h3>Doações recebidas</h3>
+        <p>Quando recebemos doações materiais, a equipe posta foto + descrição aqui para documentação.</p>
+
+        <div class="important">
+            <strong>Tudo em um lugar:</strong> Recibos e comprovantes de compra/doação ficam neste canal, facilitando a prestação de contas.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Fotos Rouanet</h2>
+        <p>O canal <span class="channel-tag">#fotos-rouanet</span> recebe fotos comprobatórias para prestação de contas:</p>
+        <ul>
+            <li>Banner da Favela Brass no local do evento</li>
+            <li>Logos nos uniformes</li>
+            <li>Público assistindo</li>
+            <li>Momentos oficiais</li>
+        </ul>
+        <p>O bot organiza as fotos por evento automaticamente.</p>
+    </div>
+
+    <div class="section">
+        <h2>Eventos e Orçamentos</h2>
+        <p>Cada evento tem:</p>
+        <ul>
+            <li><strong>Google Sheet</strong> com abas: Orçamento, Alunos, Logística, Cronograma</li>
+            <li><strong>Canal no Slack</strong> (ex: <code>#bk-2026</code>) para discussão</li>
+        </ul>
+
+        <p>O link da planilha fica fixado no canal do evento. Você tem acesso a todos os canais de eventos para acompanhar orçamentos.</p>
+
+        <div class="important">
+            <strong>Fluxo:</strong> Promoter cria orçamento na planilha → você revisa → aprova/ajusta → discussão acontece no canal do Slack.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Folha de Pagamento</h2>
+        <p>O bot calcula automaticamente as horas dos professores baseado nas presenças registradas:</p>
+
+        <pre><code>/folha jan 2026</code></pre>
+
+        <p>Mostra o total de horas de cada professor no mês (aulas individuais + teoria + ensaios de banda).</p>
+    </div>
+
+    <div class="section">
+        <h2>Comandos do Bot</h2>
+        <table>
+            <tr><td><code>/folha jan 2026</code></td><td>Cálculo da folha de pagamento</td></tr>
+            <tr><td><code>/aluno 139</code></td><td>Buscar aluno (se precisar)</td></tr>
+            <tr><td><code>/pergunta quantos professores ativos?</code></td><td>Pergunta em linguagem natural</td></tr>
+            <tr><td><code>/backup</code></td><td>Criar backup do banco de dados</td></tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <p class="footer">
+        <a href="index.html">← Voltar ao índice</a><br><br>
+        Dúvidas sobre o sistema? Fale com Tom.<br>
+        <a href="https://roteiro.favelabrass.org">roteiro.favelabrass.org</a>
+    </p>
+</body>
+</html>

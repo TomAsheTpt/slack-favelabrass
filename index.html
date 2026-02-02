@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Slack - Favela Brass</title>
+    <style>
+        :root {
+            --fb-purple: #5A0E7A;
+            --fb-dark-purple: #3E0B59;
+            --fb-yellow: #FEF100;
+            --fb-green: #62CC3C;
+            --fb-white: #FFFFFF;
+            --fb-muted: rgba(255,255,255,0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--fb-dark-purple) 0%, var(--fb-purple) 100%);
+            color: var(--fb-white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            background: linear-gradient(90deg, var(--fb-yellow), var(--fb-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.2em;
+            margin: 0 0 10px 0;
+        }
+
+        .subtitle {
+            color: var(--fb-muted);
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .role-card {
+            background: rgba(255,255,255,0.08);
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: var(--fb-white);
+            transition: all 0.2s ease;
+        }
+
+        .role-card:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--fb-yellow);
+            transform: translateY(-2px);
+        }
+
+        .role-card .name {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--fb-yellow);
+            margin-bottom: 5px;
+        }
+
+        .role-card .role {
+            font-size: 0.9em;
+            color: var(--fb-muted);
+        }
+
+        .role-card.teachers {
+            grid-column: span 2;
+            background: rgba(98, 204, 60, 0.1);
+            border-color: rgba(98, 204, 60, 0.3);
+        }
+
+        .role-card.teachers:hover {
+            background: rgba(98, 204, 60, 0.2);
+            border-color: var(--fb-green);
+        }
+
+        .role-card.teachers .name {
+            color: var(--fb-green);
+        }
+
+        .footer {
+            margin-top: 40px;
+            color: var(--fb-muted);
+            font-size: 0.85em;
+        }
+
+        .footer a {
+            color: var(--fb-yellow);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .role-grid {
+                grid-template-columns: 1fr;
+            }
+            .role-card.teachers {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="Logo FB White.png" alt="Favela Brass" onerror="this.style.display='none'">
+            <h1>Guia do Slack</h1>
+            <p class="subtitle">Selecione seu perfil para ver seu guia personalizado</p>
+        </div>
+
+        <div class="role-grid">
+            <a href="wesley.html" class="role-card">
+                <div class="name">Wesley</div>
+                <div class="role">Diretor Musical</div>
+            </a>
+            <a href="iris.html" class="role-card">
+                <div class="name">Iris</div>
+                <div class="role">Admin / Roteiro</div>
+            </a>
+            <a href="raissa.html" class="role-card">
+                <div class="name">Raíssa</div>
+                <div class="role">Financeiro</div>
+            </a>
+            <a href="lillian.html" class="role-card">
+                <div class="name">Lillian</div>
+                <div class="role">Relação com Pais</div>
+            </a>
+            <a href="wellington.html" class="role-card">
+                <div class="name">Wellington</div>
+                <div class="role">Produção</div>
+            </a>
+            <a href="professores.html" class="role-card teachers">
+                <div class="name">Professores</div>
+                <div class="role">Guia para todos os professores</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Dúvidas sobre o sistema? Fale com Tom.<br>
+            <a href="https://roteiro.favelabrass.org">roteiro.favelabrass.org</a> ·
+            <a href="https://presencas.favelabrass.org">presencas.favelabrass.org</a></p>
+        </div>
+    </div>
+</body>
+</html>

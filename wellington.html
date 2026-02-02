@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Slack - Wellington - Favela Brass</title>
+    <style>
+        :root {
+            --fb-purple: #5A0E7A;
+            --fb-dark-purple: #3E0B59;
+            --fb-yellow: #FEF100;
+            --fb-green: #62CC3C;
+            --fb-white: #FFFFFF;
+            --fb-muted: rgba(255,255,255,0.6);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--fb-dark-purple) 0%, var(--fb-purple) 100%);
+            color: var(--fb-white);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .header img { max-width: 120px; margin-bottom: 15px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--fb-muted);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-link:hover { color: var(--fb-yellow); }
+
+        h1 {
+            background: linear-gradient(90deg, var(--fb-yellow), var(--fb-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .subtitle { color: var(--fb-muted); margin-top: 5px; }
+
+        h2 {
+            color: var(--fb-yellow);
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h3 { color: var(--fb-green); margin-top: 25px; }
+
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--fb-purple);
+            color: var(--fb-yellow);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: var(--fb-yellow);
+        }
+
+        pre {
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            border-left: 4px solid var(--fb-yellow);
+        }
+
+        pre code { background: none; padding: 0; color: var(--fb-white); }
+
+        .important {
+            background: rgba(254, 241, 0, 0.15);
+            border-left: 4px solid var(--fb-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important strong { color: var(--fb-yellow); }
+
+        a { color: var(--fb-yellow); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .channel-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            color: var(--fb-green);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 40px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--fb-muted);
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media print {
+            body { background: white; color: #333; padding: 20px; }
+            h1 { -webkit-text-fill-color: var(--fb-purple); }
+            h2 { color: var(--fb-purple); }
+            h3 { color: var(--fb-dark-purple); }
+            .section { background: #f9f9f9; border-color: #ddd; }
+            code { background: #f0f0f0; color: var(--fb-purple); }
+            pre { background: #f5f5f5; }
+            pre code { color: #333; }
+            .channel-tag { background: #e8f5e9; color: #2e7d32; }
+            .back-link { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Voltar</a>
+
+    <div class="header">
+        <img src="Logo FB White.png" alt="Favela Brass" onerror="this.style.display='none'">
+        <h1>Guia do Slack</h1>
+        <p class="subtitle">Wellington - Produção</p>
+    </div>
+
+    <div class="section">
+        <h2>Seus Canais</h2>
+        <table>
+            <tr><th>Canal</th><th>Para quê</th></tr>
+            <tr><td><code>#geral</code></td><td>Comunicados para toda equipe</td></tr>
+            <tr><td><code>#eventos</code></td><td>Coordenação geral de eventos</td></tr>
+            <tr><td><code>#compras</code></td><td>Compras, recibos, doações recebidas</td></tr>
+            <tr><td><code>#fotos-rouanet</code></td><td>Fotos comprobatórias de eventos</td></tr>
+            <tr><td><code>#midias</code></td><td>Vídeos/fotos para redes sociais</td></tr>
+            <tr><td><code>#evento-xxx</code></td><td>Canais de eventos específicos</td></tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Eventos</h2>
+        <p>Cada evento tem um canal próprio (ex: <span class="channel-tag">#bk-2026</span>) com:</p>
+        <ul>
+            <li>Link para a planilha do evento (fixado no canal)</li>
+            <li>Checklist de produção</li>
+            <li>Discussão da equipe</li>
+        </ul>
+
+        <div class="important">
+            <strong>No dia do evento:</strong> Tire fotos do banner da Favela Brass, logos nos uniformes, e do público. Envie para <span class="channel-tag">#fotos-rouanet</span>.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Fotos Rouanet</h2>
+        <p>No canal <span class="channel-tag">#fotos-rouanet</span>, envie fotos comprobatórias de cada evento:</p>
+        <ul>
+            <li>Banner da Favela Brass no local</li>
+            <li>Logos nos uniformes</li>
+            <li>Público assistindo</li>
+            <li>Momentos oficiais</li>
+        </ul>
+        <p>O bot vai perguntar de qual evento é a foto e salvar automaticamente.</p>
+    </div>
+
+    <div class="section">
+        <h2>Compras e Recebimentos</h2>
+        <p>No canal <span class="channel-tag">#compras</span>:</p>
+
+        <h3>Quando buscar uma compra</h3>
+        <pre><code>Busquei as palhetas na loja. Recibo em anexo.
+[foto do recibo]</code></pre>
+
+        <h3>Quando receber doação/entrega</h3>
+        <pre><code>Recebi 5 estantes de partitura doadas pela escola X.
+[foto]</code></pre>
+
+        <div class="important">
+            <strong>Sempre inclua foto</strong> do recibo ou do material recebido para documentação.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Mídias</h2>
+        <p>No canal <span class="channel-tag">#midias</span>, compartilhe vídeos e fotos de eventos, ensaios, bastidores - qualquer conteúdo que possa ser usado para redes sociais ou YouTube.</p>
+    </div>
+
+    <hr>
+
+    <p class="footer">
+        <a href="index.html">← Voltar ao índice</a><br><br>
+        Dúvidas? Fale com Wesley ou Tom.
+    </p>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia do Slack para Professores - Favela Brass</title>
+    <style>
+        :root {
+            --fb-purple: #5A0E7A;
+            --fb-dark-purple: #3E0B59;
+            --fb-yellow: #FEF100;
+            --fb-green: #62CC3C;
+            --fb-white: #FFFFFF;
+            --fb-muted: rgba(255,255,255,0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--fb-dark-purple) 0%, var(--fb-purple) 100%);
+            color: var(--fb-white);
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .header img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            background: linear-gradient(90deg, var(--fb-yellow), var(--fb-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--fb-yellow);
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        h3 {
+            color: var(--fb-green);
+            margin-top: 25px;
+        }
+
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: var(--fb-purple);
+            color: var(--fb-yellow);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255,255,255,0.05);
+        }
+
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.9em;
+            color: var(--fb-yellow);
+        }
+
+        pre {
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            border-left: 4px solid var(--fb-yellow);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: var(--fb-white);
+        }
+
+        .important {
+            background: rgba(254, 241, 0, 0.15);
+            border-left: 4px solid var(--fb-yellow);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important strong {
+            color: var(--fb-yellow);
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, rgba(98, 204, 60, 0.15), rgba(98, 204, 60, 0.05));
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 1px solid rgba(98, 204, 60, 0.3);
+        }
+
+        .summary-box h3 {
+            margin-top: 0;
+            color: var(--fb-green);
+        }
+
+        .summary-box ol {
+            margin-bottom: 0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin: 40px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--fb-yellow);
+        }
+
+        a {
+            color: var(--fb-yellow);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .command-table td:first-child {
+            white-space: nowrap;
+        }
+
+        @media print {
+            body {
+                padding: 15px 25px;
+                background: white !important;
+                color: #333;
+                font-size: 11pt;
+                max-width: none;
+            }
+            .header {
+                border-bottom-color: var(--fb-purple);
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+            .header img:not(.logo-print) {
+                display: none;
+            }
+            .header img.logo-print {
+                display: block !important;
+                max-width: 60px;
+                margin: 0 auto 10px;
+            }
+            h1 {
+                background: none;
+                -webkit-text-fill-color: var(--fb-purple);
+                color: var(--fb-purple);
+                font-size: 1.6em;
+            }
+            h2 {
+                color: var(--fb-purple);
+                margin-top: 20px;
+                font-size: 1.2em;
+                border-bottom-color: #ddd;
+            }
+            h3 {
+                color: var(--fb-dark-purple);
+                font-size: 1em;
+                margin-top: 15px;
+            }
+            .section {
+                background: #fafafa;
+                border: 1px solid #ddd;
+                padding: 15px;
+                margin: 12px 0;
+                page-break-inside: avoid;
+            }
+            .important {
+                background: #fff9e6;
+                border-left-color: #d4a800;
+            }
+            .important strong {
+                color: #996600;
+            }
+            .summary-box {
+                background: #f0fff0;
+                border-color: #4a4;
+                page-break-inside: avoid;
+            }
+            .summary-box h3 {
+                color: #228B22;
+            }
+            table {
+                font-size: 10pt;
+            }
+            th {
+                background: var(--fb-purple) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            th, td {
+                border-color: #ccc;
+                padding: 8px;
+            }
+            code {
+                background: #f0f0f0;
+                color: var(--fb-purple);
+                font-size: 0.9em;
+            }
+            pre {
+                background: #f5f5f5;
+                border-left-color: var(--fb-purple);
+                padding: 10px 15px;
+                font-size: 10pt;
+            }
+            pre code {
+                color: #333;
+            }
+            a {
+                color: var(--fb-purple);
+            }
+            .contact-grid {
+                gap: 10px;
+            }
+            .contact-card {
+                background: #fafafa;
+                border-color: #ddd;
+                padding: 10px;
+            }
+            .contact-card strong {
+                color: var(--fb-purple);
+            }
+            hr {
+                border-top-color: #ddd;
+                margin: 20px 0;
+            }
+            /* Ensure page breaks work well */
+            h2 {
+                page-break-after: avoid;
+            }
+            .section, .summary-box {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Hide print-only elements on screen */
+        .logo-print {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="Logo FB White.png" alt="Favela Brass" onerror="this.style.display='none'">
+        <img src="logo3coresWEB.png" alt="Favela Brass" class="logo-print" onerror="this.style.display='none'">
+        <h1>Guia do Slack para Professores</h1>
+    </div>
+
+    <div class="section">
+        <h2>O que é o Slack?</h2>
+        <p>O Slack é o nosso sistema de comunicação interna da equipe. Usamos para:</p>
+        <ul>
+            <li>Comunicados importantes</li>
+            <li>Registrar presenças das aulas</li>
+            <li>Reportar problemas com instrumentos</li>
+            <li>Consultar informações de alunos e horários</li>
+        </ul>
+
+        <h3>Por que Slack e não WhatsApp?</h3>
+        <p>O Slack permite usar comandos automáticos (como <code>/presenca-aula</code>) que registram suas presenças direto no sistema, calculam suas horas, e geram a folha de pagamento. No WhatsApp isso não é possível.</p>
+
+        <div class="important">
+            <strong>Importante:</strong> O Slack é apenas para equipe. Comunicação com pais continua no WhatsApp.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Primeiros Passos</h2>
+        <ol>
+            <li>Clique no link de convite que você recebeu para entrar no workspace "Favela Brass"</li>
+            <li>Baixe o app no celular (recomendado) ou use pelo navegador</li>
+            <li>Configure suas notificações para não perder mensagens importantes</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Canais que Você Verá</h2>
+        <table>
+            <tr>
+                <th>Canal</th>
+                <th>Para quê</th>
+            </tr>
+            <tr>
+                <td><code>#geral</code></td>
+                <td>Comunicados para toda equipe</td>
+            </tr>
+            <tr>
+                <td><code>#professores</code></td>
+                <td>Avisos e discussões entre professores</td>
+            </tr>
+            <tr>
+                <td><code>#instrumentos</code></td>
+                <td>Reportar instrumentos quebrados/danificados</td>
+            </tr>
+            <tr>
+                <td><code>#evento-xxx</code></td>
+                <td>Canais de eventos específicos (se você participar)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Onde Encontrar o Número do Aluno</h2>
+        <p>Cada aluno tem um número de identificação (ID) no sistema. Você pode encontrar o ID de duas formas:</p>
+        <ul>
+            <li>Use <code>/aluno pedro</code> - o bot mostra os resultados com o ID</li>
+            <li>Acesse <a href="https://roteiro.favelabrass.org" target="_blank">roteiro.favelabrass.org</a> - o número aparece ao lado do nome</li>
+        </ul>
+        <p>Exemplo: "Maria Silva (139)" - o número 139 é o ID da Maria.</p>
+    </div>
+
+    <div class="section">
+        <h2>Comandos de Presença</h2>
+        <p>O bot do Favela Brass responde a comandos que começam com <code>/</code>. Você pode usar esses comandos em qualquer conversa - no seu chat direto com o bot, ou em qualquer canal.</p>
+
+        <div class="important">
+            <strong>Use todos os dias de aula, no final do dia.</strong> Esqueceu ontem? Não tem problema - o bot mostra as aulas de ontem também. Depois de registrar, você verá suas horas acumuladas do mês.
+        </div>
+
+        <h3>Aulas Individuais de Instrumento</h3>
+        <pre><code>/presenca-aula</code></pre>
+        <p>Se o bot já conhece você, mostra suas aulas automaticamente. Senão, use com seu nome:</p>
+        <pre><code>/presenca-aula joana</code></pre>
+        <p>O bot mostra suas aulas do dia (e de ontem, se não marcou). Marque quem compareceu. Ao confirmar, você verá suas horas acumuladas no mês.</p>
+
+        <h3>Aulas de Teoria</h3>
+        <pre><code>/presenca-teoria</code></pre>
+        <p>Se o bot já conhece você, mostra suas turmas automaticamente. Senão, use com seu nome:</p>
+        <pre><code>/presenca-teoria joana</code></pre>
+
+        <h3>Ensaios de Banda</h3>
+        <pre><code>/presenca banda preta</code></pre>
+        <p>Para maestros marcarem presença das bandas. O regente principal marca a presença de todos os alunos - professores de percussão não precisam marcar separado.</p>
+    </div>
+
+    <div class="section">
+        <h2>Consultar Informações</h2>
+
+        <h3>Ver seu horário</h3>
+        <pre><code>/horario joana</code></pre>
+        <p>(substitua pelo seu nome)</p>
+
+        <h3>Ver horário de um dia específico</h3>
+        <pre><code>/horario joana sabado</code></pre>
+
+        <h3>Buscar um aluno</h3>
+        <pre><code>/aluno 139</code></pre>
+        <p>ou pelo nome:</p>
+        <pre><code>/aluno pedro</code></pre>
+        <p>Se houver mais de um resultado, o bot mostra as opções.</p>
+
+        <h3>Ver alunos de uma banda</h3>
+        <pre><code>/banda preta</code></pre>
+
+        <h3>Fazer uma pergunta</h3>
+        <pre><code>/pergunta quantos alunos tocam trompete?</code></pre>
+        <p>O bot entende português e responde com dados do sistema.</p>
+    </div>
+
+    <div class="section">
+        <h2>Reportar Instrumento Danificado</h2>
+        <p>No canal <code>#instrumentos</code>:</p>
+        <ol>
+            <li>Tire uma foto do instrumento/problema</li>
+            <li>Poste no canal com descrição:</li>
+        </ol>
+        <pre><code>Sax tenor IN087 - chave do sol# travada
+[foto]</code></pre>
+        <p>Wesley vai ver e providenciar o reparo.</p>
+    </div>
+
+    <div class="section">
+        <h2>Exceções e Problemas</h2>
+        <p>Se algo não funcionou como esperado (substituição, aula cancelada, erro no sistema), avise no canal <code>#professores</code> em texto normal:</p>
+        <pre><code>Ontem a aula da Maria foi substituída pelo Pablo, 30 min</code></pre>
+        <p>Tom vai ajustar manualmente no sistema.</p>
+    </div>
+
+    <div class="section">
+        <h2>Dúvidas Frequentes</h2>
+
+        <p><strong>P: Esqueci de marcar presença ontem, o que faço?</strong><br>
+        R: Use <code>/presenca-aula</code> normalmente - o bot mostra as aulas de ontem se você ainda não marcou. Aulas mais antigas, avise Iris.</p>
+
+        <p><strong>P: Posso usar o Slack para falar com pais?</strong><br>
+        R: Não. Pais continuam no WhatsApp com Iris/Lillian.</p>
+
+        <p><strong>P: Preciso responder mensagens no Slack?</strong><br>
+        R: Leia os comunicados em <code>#geral</code> e <code>#professores</code>. Responda se for perguntado algo diretamente.</p>
+
+        <p><strong>P: Onde vejo meu pagamento?</strong><br>
+        R: O cálculo é automático baseado nas presenças registradas. Dúvidas sobre pagamento, fale com Raíssa.</p>
+
+        <p><strong>P: Onde encontro o número do aluno?</strong><br>
+        R: No site <a href="https://roteiro.favelabrass.org" target="_blank">roteiro.favelabrass.org</a> - o número aparece entre parênteses ao lado do nome.</p>
+    </div>
+
+    <div class="summary-box">
+        <h3>Resumo: O Que Fazer Todo Dia de Aula</h3>
+        <ol>
+            <li>No final do dia: <code>/presenca-aula</code> e marque as presenças</li>
+            <li>Se instrumento quebrou: Foto + descrição em <code>#instrumentos</code></li>
+            <li>Se houve substituição: Avise no <code>#professores</code></li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Contatos</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <strong>Wesley</strong>
+                Coordenação pedagógica, instrumentos
+            </div>
+            <div class="contact-card">
+                <strong>Iris</strong>
+                Horários, dados de alunos
+            </div>
+            <div class="contact-card">
+                <strong>Raíssa</strong>
+                Pagamentos, compras
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section">
+        <h2>Sugestões e Problemas</h2>
+        <p>Este sistema é novo e estamos melhorando aos poucos. Novos comandos serão adicionados conforme a necessidade. Se algo não funcionar, estiver confuso, ou você tiver ideias para facilitar o uso, avise no <code>#professores</code> ou fale com Tom.</p>
+    </div>
+
+    <p style="text-align: center; color: var(--fb-muted); font-size: 0.9em;">
+        <em>Guia atualizado em Janeiro 2026 - versão inicial</em><br>
+        Favela Brass
+    </p>
+</body>
+</html>
