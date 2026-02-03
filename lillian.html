@@ -225,8 +225,35 @@
     </div>
 
     <div class="section">
-        <h2>Comandos do Bot</h2>
-        <p>Você pode usar alguns comandos para consultar informações:</p>
+        <h2>Justificar Faltas</h2>
+        <p>Quando um pai/responsável avisar sobre uma falta, use o comando <code>/faltas</code> para registrar no sistema:</p>
+
+        <h3>Como funciona</h3>
+        <ol>
+            <li>Digite <code>/faltas</code> em qualquer canal</li>
+            <li>O bot mostra as faltas não-classificadas dos últimos 7 dias</li>
+            <li>Clique em <strong>[✅ Justificar]</strong> ou <strong>[❌ Não justificar]</strong></li>
+            <li>Se justificar, preencha o motivo no formulário que aparece</li>
+        </ol>
+
+        <h3>Exemplo de tela</h3>
+        <pre><code>📋 Faltas não-classificadas (últimos 7 dias)
+
+📅 20/01
+  • João Silva (139) - Teoria Verde     [✅ Justificar] [❌ Não justificar]
+  • Maria Santos (245) - Aula Individual [✅ Justificar] [❌ Não justificar]
+
+📅 18/01
+  • Pedro Oliveira (312) - Banda Preta   [✅ Justificar] [❌ Não justificar]</code></pre>
+
+        <div class="important">
+            <strong>Dica:</strong> Quando um pai avisar sobre ausência futura (ex: "vai viajar de 10-24 fev"), registre em <span class="channel-tag">#registro-de-pais</span> e depois use <code>/faltas</code> quando as faltas aparecerem no sistema.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Outros Comandos</h2>
+        <p>Comandos úteis para consultar informações:</p>
 
         <table>
             <tr><td><code>/aluno 139</code></td><td>Buscar dados de um aluno</td></tr>
