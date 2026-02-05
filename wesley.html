@@ -229,9 +229,25 @@
     </div>
 
     <div class="section">
-        <h2>Presença de Bandas</h2>
+        <h2>Presença</h2>
+
+        <h3>Ensaios de Banda</h3>
         <pre><code>/presenca banda preta</code></pre>
         <p>Marca presença de todos os alunos da banda. Você (ou outro regente) marca - professores de percussão não precisam marcar separado.</p>
+        <p>Para outro dia, adicione o número:</p>
+        <pre><code>/presenca banda preta 3</code></pre>
+
+        <h3>Suas Aulas Individuais</h3>
+        <pre><code>/presenca-aula wesley</code></pre>
+        <p>Mostra suas aulas de hoje. Para outro dia:</p>
+        <pre><code>/presenca-aula wesley 3</code></pre>
+
+        <h4>Se as aulas não aconteceram</h4>
+        <p>Marque a checkbox <em>"❌ Aulas não aconteceram"</em> no formulário. Registra que não houve aula, sem contar como falta para os alunos.</p>
+
+        <h4>Aula extra ou reposição</h4>
+        <pre><code>/aula-extra wesley maria</code></pre>
+        <p>Para quando um aluno fez aula fora do horário normal (reposição, troca de dia). Aceita nome ou ID do aluno.</p>
     </div>
 
     <div class="section">
@@ -275,8 +291,9 @@
 
         <h3>Presença</h3>
         <table>
-            <tr><td><code>/presenca banda preta</code></td><td>Marcar presença da banda</td></tr>
-            <tr><td><code>/presenca-aula</code></td><td>Presença de aulas individuais</td></tr>
+            <tr><td><code>/presenca banda preta</code></td><td>Marcar presença da banda (adicione número do dia se não for hoje)</td></tr>
+            <tr><td><code>/presenca-aula wesley</code></td><td>Suas aulas individuais (adicione número do dia se não for hoje)</td></tr>
+            <tr><td><code>/aula-extra wesley aluno</code></td><td>Aula extra/reposição fora do horário normal</td></tr>
             <tr><td><code>/presenca-teoria</code></td><td>Presença de teoria</td></tr>
         </table>
 

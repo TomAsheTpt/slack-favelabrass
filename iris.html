@@ -234,11 +234,27 @@
         <h2>Presença</h2>
         <p>Você pode marcar presença de grupos e acompanhar professores:</p>
 
-        <table>
-            <tr><td><code>/presenca banda preta</code></td><td>Marcar presença da banda</td></tr>
-            <tr><td><code>/presenca-aula joana</code></td><td>Ver/marcar presença de aulas de um professor</td></tr>
-            <tr><td><code>/presenca-teoria</code></td><td>Presença de turmas de teoria</td></tr>
-        </table>
+        <h3>Bandas</h3>
+        <pre><code>/presenca banda preta</code></pre>
+        <p>Marca presença de todos os alunos da banda. Para outro dia:</p>
+        <pre><code>/presenca banda preta 3</code></pre>
+
+        <h3>Aulas Individuais</h3>
+        <pre><code>/presenca-aula joana</code></pre>
+        <p>Mostra aulas do professor hoje. Para outro dia:</p>
+        <pre><code>/presenca-aula joana 3</code></pre>
+
+        <h4>Se as aulas não aconteceram</h4>
+        <p>Marque a checkbox <em>"❌ Aulas não aconteceram"</em> no formulário. Isso registra que não houve aula, sem contar como falta.</p>
+
+        <h4>Aula extra ou reposição</h4>
+        <pre><code>/aula-extra joana maria</code></pre>
+        <p>Para quando um aluno fez aula fora do horário normal (reposição, troca de dia). Aceita nome ou ID.</p>
+
+        <h3>Teoria</h3>
+        <pre><code>/presenca-teoria joana</code></pre>
+        <p>Para outro dia:</p>
+        <pre><code>/presenca-teoria joana 3</code></pre>
     </div>
 
     <div class="section">
