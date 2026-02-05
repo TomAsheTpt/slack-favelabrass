@@ -390,7 +390,12 @@
 
         <h3>Aulas Individuais de Instrumento</h3>
         <pre><code>/presenca-aula joana</code></pre>
-        <p>O bot mostra suas aulas do dia. Desmarque quem faltou e clique Salvar.</p>
+        <p>O bot mostra suas aulas de hoje. Desmarque quem faltou e clique Salvar.</p>
+
+        <h4>Registrar presença de outro dia</h4>
+        <p>Adicione o número do dia no final do comando:</p>
+        <pre><code>/presenca-aula joana 3</code></pre>
+        <p>Mostra as aulas do dia 3 do mês atual. Útil se você esqueceu de registrar ontem!</p>
 
         <h4>Se as aulas não aconteceram (feriado, doença, etc)</h4>
         <p>No formulário, marque a checkbox <em>"❌ Aulas não aconteceram"</em> antes de salvar. Isso registra que não houve aula, sem contar como falta para os alunos.</p>
@@ -403,10 +408,14 @@
         <pre><code>/presenca-teoria</code></pre>
         <p>Se o bot já conhece você, mostra suas turmas automaticamente. Senão, use com seu nome:</p>
         <pre><code>/presenca-teoria joana</code></pre>
+        <p>Para outro dia, adicione o número:</p>
+        <pre><code>/presenca-teoria joana 3</code></pre>
 
         <h3>Ensaios de Banda</h3>
         <pre><code>/presenca banda preta</code></pre>
         <p>Para maestros marcarem presença das bandas. O regente principal marca a presença de todos os alunos - professores de percussão não precisam marcar separado.</p>
+        <p>Para outro dia, adicione o número:</p>
+        <pre><code>/presenca banda preta 3</code></pre>
     </div>
 
     <div class="section">
@@ -456,7 +465,7 @@
         <h2>Dúvidas Frequentes</h2>
 
         <p><strong>P: Esqueci de marcar presença ontem, o que faço?</strong><br>
-        R: Use <code>/presenca-aula</code> normalmente - o bot mostra as aulas de ontem se você ainda não marcou. Aulas mais antigas, avise Iris.</p>
+        R: Adicione o número do dia no comando: <code>/presenca-aula joana 4</code> para o dia 4. Funciona com todos os comandos de presença.</p>
 
         <p><strong>P: Posso usar o Slack para falar com pais?</strong><br>
         R: Não. Pais continuam no WhatsApp com Iris/Lillian.</p>
