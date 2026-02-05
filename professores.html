@@ -389,10 +389,15 @@
         </div>
 
         <h3>Aulas Individuais de Instrumento</h3>
-        <pre><code>/presenca-aula</code></pre>
-        <p>Se o bot já conhece você, mostra suas aulas automaticamente. Senão, use com seu nome:</p>
         <pre><code>/presenca-aula joana</code></pre>
-        <p>O bot mostra suas aulas do dia (e de ontem, se não marcou). Marque quem compareceu. Ao confirmar, você verá suas horas acumuladas no mês.</p>
+        <p>O bot mostra suas aulas do dia. Desmarque quem faltou e clique Salvar.</p>
+
+        <h4>Se as aulas não aconteceram (feriado, doença, etc)</h4>
+        <p>No formulário, marque a checkbox <em>"❌ Aulas não aconteceram"</em> antes de salvar. Isso registra que não houve aula, sem contar como falta para os alunos.</p>
+
+        <h4>Aula extra ou reposição</h4>
+        <pre><code>/aula-extra joana maria</code></pre>
+        <p>Use quando um aluno que não tinha aula hoje fez uma aula extra (reposição, troca de dia, etc). Aceita nome ou ID do aluno.</p>
 
         <h3>Aulas de Teoria</h3>
         <pre><code>/presenca-teoria</code></pre>
@@ -470,6 +475,8 @@
         <h3>Resumo: O Que Fazer Todo Dia de Aula</h3>
         <ol>
             <li>No final do dia: <code>/presenca-aula</code> e marque as presenças</li>
+            <li>Fez aula extra/reposição? <code>/aula-extra joana nome-do-aluno</code></li>
+            <li>Aulas não aconteceram? Marque a checkbox "Não aconteceram"</li>
             <li>Se instrumento quebrou: Foto + descrição em <code>#instrumentos</code></li>
             <li>Se houve substituição: Avise no <code>#professores</code></li>
         </ol>
@@ -501,7 +508,7 @@
     </div>
 
     <p style="text-align: center; color: var(--fb-muted); font-size: 0.9em;">
-        <em>Guia atualizado em Janeiro 2026 - versão inicial</em><br>
+        <em>Guia atualizado em Fevereiro 2026</em><br>
         Favela Brass
     </p>
 </body>
