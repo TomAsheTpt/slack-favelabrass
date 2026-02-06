@@ -261,6 +261,43 @@
     </div>
 
     <div class="section">
+        <h2>Alertas de Frequência</h2>
+        <p>Use <code>/alertas</code> para ver alunos que precisam de atenção com faltas:</p>
+
+        <h3>Como funciona</h3>
+        <ol>
+            <li>Digite <code>/alertas</code> em qualquer canal</li>
+            <li>O bot mostra alunos agrupados por urgência:</li>
+        </ol>
+
+        <ul>
+            <li>🔴 <strong>AÇÃO URGENTE</strong> - 3+ faltas não-justificadas (reunião obrigatória)</li>
+            <li>🟡 <strong>ATENÇÃO</strong> - 2 faltas não-justificadas (advertência formal)</li>
+            <li>🟢 <strong>MONITORAR</strong> - 1 falta não-justificada (avisar responsável)</li>
+        </ul>
+
+        <h3>Exemplo de tela</h3>
+        <pre><code>⚠️ Alertas de Frequência - Semestre 1/2026
+
+🔴 AÇÃO URGENTE (2 alunos com 3+ faltas)
+• João Pedro (139) - 3 faltas
+  Banda Preta | Última: 05/02
+  [📋 Ver detalhes]
+
+🟡 ATENÇÃO (1 aluno com 2 faltas)
+• Maria Silva (245) - 2 faltas
+  Teoria N2 | Última: 03/02
+  [📋 Ver detalhes]
+
+🟢 MONITORAR - 5 alunos com 1 falta
+  [Ver lista]</code></pre>
+
+        <div class="important">
+            <strong>Rotina semanal:</strong> Rode <code>/alertas</code> toda segunda-feira para identificar alunos que precisam de contato com responsáveis.
+        </div>
+    </div>
+
+    <div class="section">
         <h2>Outros Comandos</h2>
         <p>Comandos úteis para consultar informações:</p>
 
